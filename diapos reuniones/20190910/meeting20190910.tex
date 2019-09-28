@@ -1,0 +1,65 @@
+\pdfoptionpdfminorversion=7
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Madrid}       % or try default, Darmstadt, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{serif}    % or try default, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage{amsmath}
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{lmodern}
+
+\usetheme{default}
+
+\title{Proyecto de titulo I}
+\author{Yerko Zec}
+\institute[]{FI - UNAB}
+\date{2019/09/10}
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+
+\begin{frame}{Estudio Bibliográfico}
+\begin{itemize}
+ \item Se realizo un estudio cronológico de los algoritmos de detección de contacto estudiados a lo largo de la contextualización del proyecto. 
+ \item Se encontraron al rededor de 14 algoritmos de detección de contacto entre poliedros
+ \item Uno de los primeros algoritmos fue el Common-Plane propuesto por Cundall\cite{1988-Cundall}
+ \item A lo largo del tiempo se generaron muchos algoritmos que ocuparon CP como base para establecer una nueva approach.
+ \item Uno de las approach mas recientes que se encontró fue Zhuang\cite{2014-Zhuang} con MSC (Multi-Shell Contact detection).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Problemas}
+ \begin{itemize}
+  \item Por cada paper que se estudiaba aparecían nuevos algoritmos lo cual ayudaba para tener una idea de la historia, pero para los algoritmos propuestos mas recientemente no se tenia mucha documentación.
+  \item Desconocimiento de haber dejado algún algoritmo fuera de la linea de tiempo.
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}{ToDo}
+\begin{itemize}
+ \item Estudiar los nuevos algoritmos encontrados en esta investigación bibliográfica. 
+ \item Proponer nuevo approach para la detección de contacto.
+ \item Definición de la pregunta de investigación para lo que queda de proyecto.
+\end{itemize}
+\end{frame}
+
+\medskip
+\bibliographystyle{plain}
+\bibliography{/home/yerkozec/Desktop/pt/memoria/Referencia}
+
+\end{document}

@@ -1,0 +1,82 @@
+\pdfoptionpdfminorversion=7
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Madrid}       % or try default, Darmstadt, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{serif}    % or try default, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage{amsmath}
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+\usepackage{lmodern}
+
+\usetheme{default}
+
+\title{Proyecto de titulo I}
+\author{Yerko Zec}
+\institute[]{FI - UNAB}
+\date{2019/08/27}
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+
+\begin{frame}{Paper Intro (2011-Hohner)}
+ \begin{itemize}
+  \item Comparación entre esferas múltiples y esferas conformadas por poliedros. Se compara la colisión entre los mismo cuerpos y contra un muro fijo.
+  \item Se pueden encontrar muchos métodos de detección de colisiones entre poliedros, pero la pregunta de cómo calcular la fuerza de contacto entre estos cuerpos aún no se responde del todo.
+  \item La ventaja de utilizar poliedros para la detección de contactos es el realismo de las simulación, ya que con estos cuerpos se pueden conformar una gran variedad de partículas más complejas.
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Ley de fuerza aplicada}
+ \begin{itemize}
+  \item El método DEM(Discrete Element Method) permite que las partículas se sobre pongan dando como resultado la fuerza de contacto como una función de un resorte.
+  \item Una de las leyes de fuerzas más frecuentemente empleadas en simulaciones-DEM es el modelo de viscoelastisidad lineal de un resorte.
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Particulas}
+ \begin{itemize}
+  \item Según las partículas utilizadas para la generación de las esferas, se obtienen distintos niveles de exactitud, en base a distintas ecuaciones.
+  \item Un aspecto importante a considerar es la clasificación de contacto entre poliedros, ya que estos pueden ser vértice-vértice, vértice-arista, vértice-cara, arista-arista, arista-cara, cara-cara.
+  \item Como Cundall \cite{2011-Hohner} determinó solo se necesitan revisar los contactos categorizados como vértice-cara y arista-arista. Debido a que los otros tipos de contacto pueden convertirce en uno de estos dos tipos.
+ \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Comparación}
+\begin{itemize}
+ \item En la colisión de la partícula esferas-multiples contra una muralla plana puede tener varios puntos de contacto. Dependiendo del angulo de impacto y rotación inicial.
+ \item Por cada punto de contacto, la fuerza resultante es calculada en base a la sobreposicion y la velocidad relativa.
+ \item Por otro lado, el contacto entre dos poliedros pueden ser categorizados como vertice-cara y arista-arista. En cambio la colision entre un poliedro y una muralla plana solo se puede categorizar como vertice-cara.
+ \item Los calculos de la fuerza de contacto son similares al calculo de esfera contra muralla.
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Resultados}
+ \begin{itemize}
+  \item La implementación de cuerpos más complejos como lo son poliedros o agrupaciones multi-esferas a DEM podría producir múltiples puntos de contacto durante la colisión.
+  \item Al calcular la fuerza de contacto se ocupa el mismo proceso de calculo, por ello estos dos enfoques son comparables. 
+ \end{itemize}
+
+\end{frame}
+
+
+\medskip
+\bibliographystyle{plain}
+\bibliography{/home/yerkozec/Desktop/pt/memoria/Referencia}
+
+\end{document}
