@@ -12,20 +12,16 @@ def genfig():
     vectorz = random.sample(range(30), 2)
     return (vectorx, vectory, vectorz)
 
-
 def genpunto():
     punto = random.sample(range(30), 3)
     # punto = np.array([5, 13])
     return punto
 
 def genarista():
-    '''vectorx = random.sample(range(30), 2)
-    vectory = random.sample(range(30), 2)'''
-    vectorx = np.array([1, 30])
-    vectory = np.array([1, 30])
-    return vectorx, vectory
-
-
+    vectorx = random.sample(range(30), 2)
+    vectory = random.sample(range(30), 2)
+    vectorz = random.sample(range(30), 2)
+    return vectorx, vectory, vectorz
 
 def getvertex(figura):
     vertex0 = np.array([figura[0][0],
@@ -44,7 +40,6 @@ def getvertex(figura):
                         figura[1][0],
                         figura[2][1]])
     return (vertex0, vertex1, vertex2, vertex3)
-
 
 def getB(figura):
     vertex = np.array(getvertex(figura))
@@ -72,7 +67,6 @@ def getB(figura):
                   [b2v[0], b2v[1], b2v[2]],
                   [b3v[0], b3v[1], b3v[2]]])
     return B
-
 
 def pointdetection(figura, punto):
     vertex = np.array(getvertex(figura))
@@ -107,8 +101,6 @@ def pointdetection(figura, punto):
         resultz = True
     return resultx and resulty and resultz
 
-
-'''
 def aristadetection(figura, arista):
     # ----------------------- get vectores de las figuras------------
     vertex = np.array(getvertex(figura))
@@ -120,31 +112,36 @@ def aristadetection(figura, arista):
     Vj = np.array([arista[0][0], arista[1][0]])
     Vk = np.array([arista[0][1], arista[1][1]])
     s = np.random.sample(1)
+
     rS = ((1 - s) * Vj) + s * Vk
+
     print(" R*(s): ", rS)
     B = getB(figura)
-    ro = np.linalg.solve(B, rS)
-    print(" ro: ", ro)
-    a = U1 - U0
-    b = U3 - U0
 
-    resultx, resulty = False, False
+    ro = np.linalg.solve(B, rS)
+
+    print(" ro: ", ro)
+    a = U1 - U0 # para cambio en eje X
+    b = U3 - U0 # para cambio en eje Z
+    c = U2 - U0 # para cambio en eje Y
+
+    resultx, resulty, resultz = False, False, False
     if (0 <= ro[0] <= max(a)):
         resultx = True
-    if (0 <= ro[1] <= max(b)):
+    if (0 <= ro[1] <= max(c)):
         resulty = True
-    return resultx and resulty
-    '''
-
-'''
-aristainside = aristadetection(figura, TestArista)
-inside = pointdetection(figura, pts)
-'''
-
-# ----------Define plano cartesiano de trabajo----------------
+    if (0 <= ro[2] <= max(b)):
+        resultz = True
+    return resultx and resulty and resultz
+# ----------main----------------
 
 punto = genpunto()
 figura = genfig()
+arista = genarista()
+
+arista[0].sort()
+arista[1].sort()
+arista[2].sort()
 
 figura[0].sort()
 figura[1].sort()
@@ -154,10 +151,12 @@ xline = np.array(figura[0])
 yline = np.array(figura[1])
 zline = np.array(figura[2])
 
-print("axis x:\n", xline, "\n y: \n", yline, "\n z: \n", zline)
-print("punto: \n", punto)
+xarista = np.array(arista[0])
+yarista = np.array(arista[1])
+zarista = np.array(arista[2])
+
 inside = pointdetection(figura, punto)
-print(inside)
+aristainside = False
 
 # ----------------------------Config Plano catersiano----------------------
 ax = plt.axes(projection = '3d')
@@ -194,7 +193,7 @@ ax.plot3D((xline[0], xline[0]),
           (zline[0], zline[1]),
           color = 'r')
 
-# ----------------------------- Dibuja un punto si esta dentro de un color y si esta fuera de otro -----------------------
+# ----------------------------- Dibuja un punto decolor verde si esta dentro y si esta fuera de rojo -----------------------
 if(inside):
     ax.plot3D((punto[0], punto[0]),
               (punto[1], punto[1]),
@@ -207,6 +206,21 @@ else:
               (punto[2], punto[2]),
               'o',
               color='r')
+# -----------------------------------Dibuja la arista-------------------
+if(aristainside):
+    ax.plot3D((xarista[0], xarista[1]),
+              (yarista[0], yarista[1]),
+              (zarista[0], zarista[1]),
+               'o-',
+              color = 'b')
+
+else:
+    ax.plot3D((xarista[0], xarista[1]),
+              (yarista[0], yarista[1]),
+              (zarista[0], zarista[1]),
+               'o-',
+              color = 'y')
+
 
 '''
 # ---------------------------------Dibuja arista de prueba-------------------------------

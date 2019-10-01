@@ -23,10 +23,8 @@ def genpunto():
 
 
 def genarista():
-    '''vectorx = random.sample(range(30), 2)
-    vectory = random.sample(range(30), 2)'''
-    vectorx = np.array([5, 15])
-    vectory = np.array([5, 25])
+    vectorx = random.sample(range(30), 2)
+    vectory = random.sample(range(30), 2)
     return vectorx, vectory
 
 
@@ -98,14 +96,12 @@ def aristadetection(figura, arista):
     Vk = np.array([arista[0][1], arista[1][1]])
     s = np.random.sample(1)
 
-    rS = ((1 - s) * Vj) + s * Vk
-
-    print(" R*(s): ", rS)
-
     B = getB(figura)
 
-    ro = np.linalg.solve(B, rS)
-    print(" ro: ", ro)
+    rosub1 = np.linalg.solve(B, Vj)
+    rosub2 = np.linalg.solve(B, Vk)
+
+    ro = ((1 - s) * rosub1) + (s * rosub2)
 
     a = U1 - U0
     b = U3 - U0
@@ -121,18 +117,12 @@ def aristadetection(figura, arista):
 pts = genpunto()
 figura = np.array(genfig())
 TestArista = np.array(genarista())
-print("figura (eje x , eje y): ", figura)
-print("arista test: ", TestArista)
 
 vertex = np.array(getvertex(figura))
 vertex0 = vertex[0]
 vertex1 = vertex[1]
 vertex2 = vertex[2]
 vertex3 = vertex[3]
-
-init = np.array(vertex0)
-fin = np.array(vertex3)
-
 
 aristainside = aristadetection(figura, TestArista)
 inside = pointdetection(figura, pts)
