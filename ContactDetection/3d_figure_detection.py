@@ -7,9 +7,13 @@ from mpl_toolkits import mplot3d
 # -----------------generador de figura geometricas 2d------------
 
 def genfig():
-    vectorx = random.sample(range(30), 2)
+    '''vectorx = random.sample(range(30), 2)
     vectory = random.sample(range(30), 2)
     vectorz = random.sample(range(30), 2)
+    '''
+    vectorx = np.array([2,25])
+    vectory = np.array([2, 25])
+    vectorz = np.array([2, 25])
     return (vectorx, vectory, vectorz)
 
 def genpunto():
@@ -219,7 +223,7 @@ else:
               (yarista[0], yarista[1]),
               (zarista[0], zarista[1]),
                'o-',
-              color = 'y')
+              color = 'b')
 
 
 '''
