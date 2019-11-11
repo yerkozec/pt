@@ -67,7 +67,7 @@ def aristadetection(U0, a, b, c, Vj, Vk):
     U0 = np.asarray(U0)
     Vj = np.asarray(Vj)
     Vk = np.asarray(Vk)
-    Vjprima = np.abs(Vj - U0)
+    Vjprima = Vj - U0
     Vkprima = Vk - U0
     B = getB()
     Ro = np.array([[0, a],
@@ -76,23 +76,24 @@ def aristadetection(U0, a, b, c, Vj, Vk):
     W = Vkprima - Vjprima
     for i in range(0, 3):
         S[i] = (Ro[i] - Vjprima[i]) / W[i]
-    print("S que utilizare para comprobar si esta dentro o fuera de la figura antes de ordenarlo\n", S)
     S = np.sort(S)
-    print("S que utilizare para comprobar si esta dentro o fuera de la figura\n",S)
-    for i in range(0, 3):
-        if (S[i][0] < 0):
-            S[i][0] = 0
-        if (S[i][1] > 1):
-            S[i][1] = 1
-    Si = np.max(S[:, 0])
-    Sf = np.min(S[:, 1])
+    print("S que utilizare para comprobar si esta dentro o fuera de la figura\n", S)
+    inside = insidedetection(S)
+    if(inside):
+        for i in range(0, 3):
+            if (S[i][0] <= 0):
+                S[i][0] = 0
+            if (S[i][1] >= 1):
+                S[i][1] = 1
+        Si = np.max(S[:, 0])
+        Sf = np.min(S[:, 1])
 
-    print("Si:\n",Si, "\nSf:\n", Sf)
-
-    Si = (Vjprima + Si * (Vkprima - Vjprima)) + U0
-    Sf = (Vjprima + Sf * (Vkprima - Vjprima)) + U0
-    print("Si:\n",Si, "\nSf:\n", Sf)
-    return Si, Sf, True
+        Si = (Vjprima + Si * (Vkprima - Vjprima)) + U0
+        Sf = (Vjprima + Sf * (Vkprima - Vjprima)) + U0
+        print("Si:\n",Si, "\nSf:\n", Sf)
+        return Si, Sf, True
+    else:
+        return Vj, Vk, False
 
     '''Si = np.array([[s[0][0] - Vj[0]],
                    [s[1][0] - Vj[1]],
@@ -125,6 +126,13 @@ def aristadetection(U0, a, b, c, Vj, Vk):
         return J, True, s, Vjprima, Vkprima'''
 
 
+def insidedetection(S):
+    for i in range(0, 3):
+        if(S[i][0] <= 0 and S[i][1] <= 0):
+            inside = False
+        else:
+            inside = True
+    return inside
 # ----------------------------------- poblar el grafico con los datos----------------------
 def createfigureplot(ax):
     ax.plot3D((U0[0], U0[0] + a),
@@ -211,22 +219,24 @@ def plottestarista(ax, Si, Sf, inside):
                   (Vj[2], Vk[2]),
                   'o-',
                   color = 'b')
+        ax.plot3D((Si[0], Sf[0]),
+                  (Si[1], Sf[1]),
+                  (Si[2], Sf[2]),
+                  'o-',
+                  color='y')
     else:
         ax.plot3D((Vj[0], Vk[0]),
                   (Vj[1], Vk[1]),
                   (Vj[2], Vk[2]),
                   'o-',
                   color='r')
-    ax.plot3D((Si[0], Sf[0]),
-              (Si[1], Sf[1]),
-              (Si[2], Sf[2]),
-              'o-',
-              color='y')
+
 
 # ----------------------- MAIN -------------------------------------------
+
 print("U0: ",U0,"\nsize: ",size,"\npoint: ",point,"\nVj: ",Vj,"\nVk: ",Vk)
 pointinside = pointdetection(U0, a, b, c, point)
-Si, Sf, aristainside= aristadetection(U0, a, b, c, Vj, Vk)
+Si, Sf, aristainside = aristadetection(U0, a, b, c, Vj, Vk)
 createfigureplot(ax)
 plottestpoint(ax, pointinside)
 plottestarista(ax, Si, Sf, aristainside)

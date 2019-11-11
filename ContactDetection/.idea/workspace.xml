@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30205acc-a3d6-4768-a2fd-a9f17fb78226" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/datatestgenerator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/detection-3d.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3d_figure_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/3d_figure_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generador_figuras.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generador_figuras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diapos reuniones/hito1/img/DEM.png" beforeDir="false" afterPath="$PROJECT_DIR$/../diapos reuniones/hito1/img/DEM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detection-3d.py" beforeDir="false" afterPath="$PROJECT_DIR$/detection-3d.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
