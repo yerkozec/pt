@@ -17,6 +17,7 @@
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{lmodern}
+\usepackage{tikz}
 
 \lstdefinestyle{mystyle}{
     breaklines=true,                 
@@ -28,6 +29,20 @@
     showstringspaces=false,
     showtabs=false,                  
     tabsize=2
+}
+
+\lstdefinestyle{MyStyleForCode}{
+  language=Python,
+  captionpos = b,
+  showstringspaces=false,
+  basicstyle=\tiny,
+  keywordstyle=\bfseries\color{blue},
+  commentstyle=\slshape\color{white!15!black},
+  tabsize = 2,  
+  stringstyle=\slshape\color{green!15!black},
+  morekeywords = {class,self,open,from,import,map,list,sum,str,float,
+  raw_input,abs,True,False,len,min,round,range,int,def,set},
+  breaklines = True,
 }
 
 \title{Nueva propuesta para detección de contacto entre poliedros a gran escala}
@@ -53,18 +68,48 @@
 
 \section{Motivación}
 \begin{frame}{Motivación}
-    \begin{itemize}
-     \item Detección de contacto entre poliedros.
-     \item Simulación de grandes movimientos de rocas propuesto por Cundall \cite{1988-Cundall}.
-     \item Nueva propuesta para detección de contacto entre poliedros.
-     \item Problema de detección aun no se encuentra resuelto en su totalidad.
-    \end{itemize}
+
+     %\item Detección de contacto entre poliedros.
+    % \item Simulación de grandes movimientos de rocas propuesto por Cundall \cite{1988-Cundall}.
+     %\item Nueva propuesta para detección de contacto entre poliedros.
+     %\item Problema de detección aún no se encuentra resuelto en su totalidad.
+     
 \end{frame}
 
-\section{Historia}
-\begin{frame}{Historia}
+\begin{frame}{prgunta de investigación}
+    \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale = 1.2]
+
+                \pgfmathsetmacro{\cubex}{3}
+                \pgfmathsetmacro{\cubey}{4}
+                \pgfmathsetmacro{\cubez}{3}
+                \pgfmathsetmacro{\x}{0}
+                \pgfmathsetmacro{\y}{0}
+                \pgfmathsetmacro{\z}{0}
+
+                \definecolor{brick}{rgb}{0.62,0.16,0.11}
+
+                \draw[white,fill=brick] (\x,\y,\z) -- ++(-\cubex/2,0,-\cubez/2) -- ++(\cubex/2,0,-\cubez/2) -- ++(\cubex/2,0,\cubez/2) -- cycle;
+                \draw[white,fill=brick] (\x,\y,\z) -- ++(-\cubex/2,0,-\cubez/2) -- ++(0,-\cubey,0) -- ++(\cubex/2,0,\cubez/2) -- cycle;
+                \draw[white,fill=brick] (\x,\y,\z) -- ++(0,-\cubey,0) -- ++(\cubex/2,0,-\cubez/2) -- ++(0,\cubey,0) -- cycle;
+
+                \draw[<->,xshift = .1cm,yshift = -.1cm] (\x,\y -  \cubey,\z) -- ++(\cubex/2,0,-\cubez/2) node[midway,below] {$\mathlarger{b}$};
+                \draw[<->,xshift = -.1cm,yshift = -.1cm] (\x,\y - \cubey,\z) -- ++(-\cubex/2,0,-\cubez/2) node[midway,below] {$\mathlarger{a}$};
+                \draw[<->,xshift = -.1cm] (\x - \cubex/2,\y,\z - \cubez/2) -- ++(0.,-\cubey,0.) node[midway,left] {$\mathlarger{c}$};
+
+            \end{tikzpicture}
+        \caption{A rock represented by a regular polyhedron with dimensions $a$, $b$ and $c$.}
+        \label{fig:rock}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+
+\section{Marco teorico}
+\begin{frame}{Marco teorico}
  \begin{itemize}
-  \item En 1971 Cundall \cite{1988-Cundall} elaboro un método llamado Discrete Element Method(DEM).
+  \item En 1971 Cundall \cite{1988-Cundall} elaboró un método llamado Discrete Element Method(DEM).
   \item DEM está dividido en 3 fases: neighbor search, contact detection y force resolution.  
   \item Esta propuesta simula grandes movimiento de partículas.
   \item Hasta la fecha existen más de 15 algoritmos para la detección de contacto entre partículas.
@@ -75,7 +120,7 @@
  \end{itemize}
 \end{frame}
 
-\begin{frame}{Common-Plane}
+\begin{frame}{Algunos algoritmos}
  \begin{itemize}
   \item En 1988 Cundall\cite{1988-Cundall} propuso un algoritmo llamado Common-Plane (CP)
   \item Mencionando algunos algoritmos utilizados a lo largo de la historia son: CP, FCP, MR, SLM, Multi-grid y MSC entre otros.
@@ -86,7 +131,7 @@
 \begin{frame}{Common-Plane}
  \begin{itemize}
   \item Common-Plane(CP), fue en primera instancia creado por Cundall en 1988.
-  \item El principio de este algoritmo, es localizar un plano entre dos figuras e ir calculando la distancias.
+  \item Principio del algoritmo: Localizar un plano entre dos figuras e ir calculando la distancias.
   \begin{figure}[\centering]
   \includegraphics[width=0.5\linewidth]{img/CP}
   \end{figure}
@@ -96,8 +141,8 @@
 
 \begin{frame}{Fast Common-Plane}
  \begin{itemize}
-  \item En 2004 Nezami \cite{2004-Nezami} propuso una nueva propuesta para el calculo del CP y se llamo Fast Common-Plane (FCP).
-  \item Con esta nueva propuesta mejoro el orden del algoritmo por ello la eficiencia.
+  \item En 2004 Nezami \cite{2004-Nezami} propuso una nueva propuesta para el cálculo del CP y se llamó Fast Common-Plane (FCP).
+  \item Con esta nueva propuesta mejoró el orden del algoritmo por ello la eficiencia.
   \begin{figure}[\centering]
   \includegraphics[width = 0.5\linewidth]{img/Diagrama-FCP}
   \end{figure}
@@ -107,8 +152,8 @@
 
 \begin{frame}{Shortest Link Method}
  \begin{itemize}
-  \item Nezami en 2006 \cite{2006-Nezami} propuso otro algoritmo el cual ocupa como base FCP.
-  \item En base a resultados expuestos por Nezami \cite{2006-Nezami} SLM es 17 veces mas rápido que otros algoritmos convencionales.
+  \item Nezami en 2006 \cite{2006-Nezami} propuso otro algoritmo ocupando como base FCP.
+  \item En base a resultados expuestos por Nezami \cite{2006-Nezami}, el SLM es 17 veces más rápido que otros algoritmos convencionales.
   \begin{figure}[\centering]
   \includegraphics[width=0.5\linewidth]{img/SLM}
   \end{figure}
@@ -119,7 +164,7 @@
  \begin{itemize}
   \item Fue desarrollado por Zhuang el 2014 \cite{2014-Zhuang}.
   \item La detección de contacto y la búsqueda de vecindario.
-  \item MSC como método tanto de detección de vecindario como detección de contacto es uno de los mas eficiente, según concluye Zhuang.
+  \item MSC como método tanto de detección de vecindario como detección de contacto es uno de los más eficiente, según concluye Zhuang.
   \begin{figure}[\centering]
    \includegraphics[width=0.8\linewidth]{img/Multi-shell}
   \end{figure}
@@ -130,7 +175,7 @@
 \begin{frame}{Problema}
     \begin{itemize}
         \item Detección de contacto computacionalmente costoso.
-        \item Análisis de gran cantidad de partículas.
+        \item Análisis de distintos tipos de colisiones.
     \end{itemize}
 \end{frame}
 
@@ -139,13 +184,16 @@
 
 \begin{block}{Objetivo General}
  \begin{itemize}
-    \item Detectar de forma eficiente y eficaz el contacto entre poliedros.
+    %\item Detectar de forma eficiente y eficaz el contacto entre poliedros.
+    \item Desarrollar una nueva propuesta que detecte colisiones entre poliedros.
  \end{itemize}
 \end{block}
 
-\begin{block}{Objetivo Especifico}
+\begin{block}{Objetivo Específico}
  \begin{itemize}
-  \item Generar algoritmo de detección de contacto mediante método propuesto.
+    \item Desarrollar una representación geométrica para los cuerpos rígidos.
+    \item Desarrollar un algoritmo de detección de contactos para vértices y aristas.
+    \item Desarrollar un algoritmo de detección de contacto entre cuerpos rígidos de orden no mayor a $\mathcal{O}(N)$, donde $N$ es la cantidad de cuerpos de la simulación.
  \end{itemize}
 \end{block}
 \end{frame}     
@@ -153,8 +201,12 @@
 \section{Metodología}
 \begin{frame}{Metodología}
 \begin{itemize}
-    \item Se realizo un estudio sobre el tema propuesto, donde se recopilaron los datos pertinentes.
-    \item Se genero una linea de tiempo donde se señalaron los trabajos mas relevantes al tema.
+    \item Se realizó un estudio sobre el tema propuesto, donde se recopilaron los datos pertinentes.
+    \item Se generó una línea de tiempo donde se señalaron los trabajos más relevantes al tema.
+    \item Desarrollo de algoritmo en 2-D.
+    \item Upgrade del algoritmo a 3-D.
+    \item Optimización de codigo, con el fin de probar un set de prueba
+    \color{red} Cambiar el ultimo punto para que se entienda mejor.
 \end{itemize}
 \end{frame}
 
@@ -171,43 +223,8 @@
 \end{frame}
 
 \begin{frame}{Metodología}
- \begin{block}{Algoritmo}
-\begin{figure}
- \includegraphics[width = 0.6\linewidth]{img/figure_gen}
-\end{figure}
- \end{block}
-\end{frame}
-
-\begin{frame}{Metodología}
- \begin{block}{Algoritmo}
-\begin{figure}
- \includegraphics[width = 0.6\linewidth]{img/Contact_detection}
- \includegraphics[width = 0.6\linewidth]{img/Contact_detection2}
-\end{figure}
- \end{block}
-\end{frame}
-
-\begin{frame}{Metodología}
- \begin{block}{Algoritmo}
-\begin{figure}
- \includegraphics[width = 0.6\linewidth]{img/Figura_arista}
- \includegraphics[width = 0.6\linewidth]{img/Figura_dentro}
-\end{figure}
- \end{block}
-\end{frame}
-
-\begin{frame}{Metodología}
- \begin{block}{Algoritmo}
-\begin{figure}
- \includegraphics[width = 0.6\linewidth]{img/Figura_vertice}
- \includegraphics[width = 0.6\linewidth]{img/figura_fuera}
-\end{figure}
- \end{block}
-\end{frame}
-
-\begin{frame}{Metodología}
 \begin{itemize}
-    \item Para el control de versiones del código se utilizo un repositorio en github.
+    \item Para el control de versiones del código se utilizó un repositorio en github.
     \begin{figure}
       \includegraphics[width = 1\linewidth]{img/github}
     \end{figure}
@@ -215,11 +232,88 @@
 \end{itemize}
 \end{frame}
 
-\section{Conclusion}
-\begin{frame}{Conclusion}
+\section{Resultados}
+\begin{frame}{Resultados}
+ \begin{block}{Código 2-D}
+  \lstinputlisting[style = MyStyleForCode, 
+  frame = single,
+  firstline = 7, 
+  lastline = 23, 
+  label= {lst:Get_var}]{Codigo/3d_figure_detection.py}
+ \end{block}
+\end{frame}
+
+\begin{frame}{Resultados}
+ \begin{block}{Detección de punto}
+  \lstinputlisting[style = MyStyleForCode, 
+  frame = single,
+  firstline = 69, 
+  lastline = 92, 
+  label= {lst:Get_var}]{Codigo/3d_figure_detection.py}
+ \end{block}
+\end{frame}
+
+\begin{frame}{Resultados}
+ \begin{block}{Prueba 2-D}
+\begin{figure}
+ \includegraphics[width = 0.6\linewidth]{img/Figura_arista}
+ \includegraphics[width = 0.6\linewidth]{img/Figura_dentro}
+\end{figure}
+ \end{block}
+\end{frame}
+
+\begin{frame}{Resultados}
+ \begin{block}{Prueba 2-D}
+\begin{figure}
+ \includegraphics[width = 0.6\linewidth]{img/Figura_vertice}
+ \includegraphics[width = 0.6\linewidth]{img/figura_fuera}
+\end{figure}
+ \end{block}
+\end{frame}
+
+\begin{frame}{Resultados}
+ \begin{block}{Codigo 3-D}
+  \lstinputlisting[style = MyStyleForCode, 
+  frame = single,
+  firstline = 6, 
+  lastline = 28, 
+  label= {lst:Get_var}]{Codigo/detection-3d.py}
+ \end{block}
+\end{frame}
+
+\begin{frame}{Resultados}
+ \begin{block}{Codigo 3-D}
+  \lstinputlisting[style = MyStyleForCode, 
+  frame = single,
+  firstline = 66, 
+  lastline = 92, 
+  label= {lst:Get_var}]{Codigo/detection-3d.py}
+ \end{block}
+\end{frame}
+
+\begin{frame}{Resultados}
+ \begin{block}{Prueba 3-D}
+    \begin{figure}
+        \includegraphics[width = 0.45\linewidth]{img/3Dprueba1}
+        \includegraphics[width = 0.45\linewidth]{img/3Dprueba2}
+    \end{figure}
+ \end{block}
+\end{frame}
+
+\begin{frame}{Resultados}
+ \begin{block}{Prueba 3-D}
+    \begin{figure}
+        \includegraphics[width = 0.45\linewidth]{img/3Dprueba3}
+        \includegraphics[width = 0.45\linewidth]{img/3Dprueba5}
+    \end{figure}
+ \end{block}
+\end{frame}
+
+\section{Conclusi\'on}
+\begin{frame}{Conclusión}
  \begin{itemize}
-  \item Cabe mencionar que existen varias soluciones al problema propuesto, pero aun así no esta completamente resuelto.
-  \item Se busca realizar la detección de contacto de la forma más eficiente posible ocupando la menor cantidad de recursos computacionales posibles.
+  \item 
+  \item En esta fase del desarrollo de la propuesta se logr\'o detectar si un vértice y una arista están en contacto con el poliedro.
  \end{itemize}
 \end{frame}
 
@@ -227,7 +321,7 @@
 \begin{frame}{Referencias}
 \medskip
 \bibliographystyle{plain}
-\bibliography{/home/yerkozec/Desktop/pt/memoria/Referencia}
+\bibliography{/files/Referencia}
 \end{frame}
 
 

@@ -1,0 +1,72 @@
+\pdfoptionpdfminorversion=7
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Madrid}       % or try default, Darmstadt, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{serif}    % or try default, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage{amsmath}
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{tikz}
+
+\usetheme{default}
+
+\title{Proyecto de titulo I}
+\author{Yerko Zec}
+\institute[]{FI - UNAB}
+\date{\today}
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+
+\begin{frame}{Programación detección cara}
+\begin{itemize}
+    \item Se realizo una función la cual detectaba los vectores que componen la figura y los divide en un arreglo nuevo que consiste en los vectores de cada cara de la siguiente manera.
+    $V_i{}_j{}_k{}_l$
+    \item Una vez detectadas y divididas las caras dentro del arreglo, se procede a generar un centroide de la cara, el cual se utilizara para la detección por cual cara entro el punto a estudiar.
+    
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \begin{itemize}
+  \item La forma en la que se busca detectar por cual cara entro el punto de prueba, se analizara con respecto al centroide.
+  \item Obteniendo la distancia al centroide de la cara se asumirá que el punto entro por esa cara.
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Problemas}
+  \begin{itemize}
+   \item El problema más recurrente es que se busco optimizar el código desde un principio lo cual atraso un tiempo el trabajo.
+   \item Falta parte del código que calcula la distancia al punto, porque falta un paso en la generación del centroide.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{ToDo}
+  \begin{itemize}
+   \item Estudiar nuevas maneras de programar el código para buscar optimización.
+   \item Con el set de prueba verificar si se detecta correctamente por donde entro el punto estudiado.
+  \end{itemize}
+\end{frame}
+
+
+\medskip
+\bibliographystyle{plain}
+\bibliography{/home/yerkozec/Desktop/pt/memoria/Referencia}
+
+\end{document}

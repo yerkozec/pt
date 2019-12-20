@@ -7,33 +7,23 @@ from mpl_toolkits import mplot3d
 # -----------------generador de figura geometricas 2d------------
 
 def genfig():
-    '''
     vectorx = random.sample(range(30), 2)
     vectory = random.sample(range(30), 2)
     vectorz = random.sample(range(30), 2)
-    '''
-    vectorx = np.array([1, 16])
-    vectory = np.array([2, 22])
-    vectorz = np.array([1, 11])
 
     return (vectorx, vectory, vectorz)
 
 
 def genpunto():
     punto = random.sample(range(30), 3)
-    # punto = np.array([5, 13])
+
     return punto
 
 
 def genarista():
-    '''
     vectorx = random.sample(range(30), 2)
     vectory = random.sample(range(30), 2)
     vectorz = random.sample(range(30), 2)
-    '''    
-    vectorx = np.array([5, 25])
-    vectory = np.array([9, 20])
-    vectorz = np.array([15, 5])
 
     return vectorx, vectory, vectorz
 
@@ -238,7 +228,6 @@ yarista = np.array(arista[1])
 zarista = np.array(arista[2])
 
 U0 = np.array(getvertex(figura)[0])
-# inside = pointdetection(figura, punto)
 s, aristadentro, dentro, Vjp, Vkp = aristadetection(figura, arista)
 
 print("s:\n", s, "\n arista dentro??:\n", aristadentro, "\narista dentro:\n", dentro)
@@ -250,18 +239,7 @@ print("si:\n", Si, "\nSf:\n", Sf)
 Si = Vjp + Si * (Vkp - Vjp) + U0
 Sf = Vjp + Sf * (Vkp - Vjp) + U0
 
-'''segdentro = np.array([[dentro[0][0], dentro[1][0]],
-                      [dentro[0][1], dentro[1][1]],
-                      [dentro[0][2], dentro[1][2]]])
-print(segdentro,s)
-''''''
-segmentocompleto = np.array([xarista, yarista, zarista])
-fuera = segmentocompleto - s
-segmentofuera = np.array(1)
-print("\nsegmento completo:\n", segmentocompleto,
-      "\n fuera: \n", fuera,
-      "\nsegmento fuera:\n", segmentofuera)
-'''
+
 # ----------------------------Config Plano catersiano----------------------
 ax = plt.axes(projection='3d')
 ax.set_xlim3d(0, 30)
@@ -298,7 +276,7 @@ ax.plot3D((xline[0], xline[0]),
           color='r')
 
 # ----------------------------- Dibuja un punto decolor verde si esta dentro y si esta fuera de rojo -----------------------
-'''if(inside):
+if(inside):
     ax.plot3D((punto[0], punto[0]),
               (punto[1], punto[1]),
               (punto[2], punto[2]),
@@ -310,7 +288,7 @@ else:
               (punto[2], punto[2]),
               'o',
               color='r')
-'''  # -----------------------------------Dibuja la arista-------------------
+# -----------------------------------Dibuja la arista-------------------
 if (aristadentro):
     ax.plot3D((xarista[0], xarista[1]),
               (yarista[0], yarista[1]),
