@@ -1,41 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
-import random
-# --------------------------- end config plano -----------------------------------
-
-# ----------------------------------get B -----------------------------------
-def getB():
-    b = np.array([[1, 0, 0],
-                  [0, 1, 0],
-                  [0, 0, 1]])
-    return b
-
-
-# --------------------------------------- END  get b ------------------------
-
-
-# ----------------------------- detection if inside ------------------------------
-def pointdetection(U0, a, b, c, point):
-    B = getB()
-    V0 = point[0] - U0[0]
-    V1 = point[1] - U0[1]
-    V2 = point[2] - U0[2]
-
-    V = np.array([[V0], [V1], [V2]])
-
-    alpha = np.linalg.solve(B, V)
-
-    resultx, resulty, resultz = False, False, False
-
-    if (0 <= alpha[0] <= a):
-        resultx = True
-    if (0 <= alpha[1] <= b):
-        resulty = True
-    if (0 <= alpha[2] <= c):
-        resultz = True
-    return resultx and resulty and resultz
-
 
 def aristadetection(U0, a, b, c, Vj, Vk):
     S = np.zeros([3, 2])
@@ -44,15 +7,20 @@ def aristadetection(U0, a, b, c, Vj, Vk):
     Vk = np.asarray(Vk)
     Vjprima = Vj - U0
     Vkprima = Vk - U0
-    B = getB()
     Ro = np.array([[0, a],
                    [0, b],
                    [0, c]])
     W = Vkprima - Vjprima
+
     for i in range(0, 3):
         S[i] = (Ro[i] - Vjprima[i]) / W[i]
+        print("Ro: ", Ro[i], "\nVjprima:", Vjprima[i], "\nW:", W[i])
+        print("ro - vjprima", Ro[i] - Vjprima[i])
+        print("SS:", S[i], "\nSe termina el loop \n")
+    print("\nS antes de sort: \n", S)
     S = np.sort(S)
     inside = insidedetection(S)
+    print("\nS despues de sort: \n", S)
     if (inside):
         for i in range(0, 3):
             if (S[i][0] <= 0):
@@ -61,7 +29,7 @@ def aristadetection(U0, a, b, c, Vj, Vk):
                 S[i][1] = 1
         Si = np.max(S[:, 0])
         Sf = np.min(S[:, 1])
-
+        print("Si: ", Si, "\nSf: ", Sf)
         Si = (Vjprima + Si * (Vkprima - Vjprima)) + U0
         Sf = (Vjprima + Sf * (Vkprima - Vjprima)) + U0
         return Si, Sf, True
@@ -101,13 +69,15 @@ def aristadetection(U0, a, b, c, Vj, Vk):
 
 def insidedetection(S):
     for i in range(0, 3):
-        if (S[i][0] <= 0 and S[i][1] <= 0):
+        print(S[i][0], S[i][1])
+        if (S[i][0] <= 0 or S[i][1] <= 0):
             inside = False
         else:
             inside = True
     return inside
 
 
+'''
 def whichfacepoint(U0, a, b, c, point):
     U0 = np.array(U0)
     a = np.array([a, 0, 0])
@@ -140,36 +110,6 @@ def genvectornormal(faces, point):
                [0, 0, 1],
                [0, 0, -1])
     return prodmix
-
-
-
-def testdetection():
-    U0 = [2, 4, 2]
-    a, b, c = 10, 15, 25
-    countpointin, countpointout, countaristain, countaristaout = 0, 0, 0, 0
-    start_time_point = time.time()
-    for i in range(0, 10):
-        point = list(random.sample(range(30), 3))
-        pointinside = pointdetection(U0, a, b, c, point)
-        if pointinside:
-            countpointin = countpointin + 1
-        else:
-            countpointout = countpointout + 1
-        i = i + 1
-    elapsed_time_point = (time.time() - start_time_point)
-    start_time_arista = time.time()
-    for j in range(0, 10):
-        Vj = list(random.sample(range(30), 3))
-        Vk = list(random.sample(range(30), 3))
-        Si, Sf, aristainside = aristadetection(U0, a, b, c, Vj, Vk)
-        if aristainside:
-            countaristain = countaristain + 1
-        else:
-            countaristaout = countaristaout + 1
-        j = j + 1
-
-    elapsed_time_arista = (time.time() - start_time_arista)
-    print(elapsed_time_point, elapsed_time_arista, countaristain, countaristaout, countpointin, countpointout)
-    return Si, Sf, pointinside, aristainside, Vj, Vk, point
+'''
 
 

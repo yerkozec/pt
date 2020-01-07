@@ -22,13 +22,3 @@ def gendata(datarandom):
         Vj = list(map(float, Vj.strip().split()))
         Vk = list(map(float, Vk.strip().split()))
         return U0, a, b, c, point, Vj, Vk
-
-
-
-'''boolean = False
-for i in range(0, 5):
-    if boolean == False and i < 10:
-        gendata(boolean)
-        i = i + 1
-    else:
-        boolean = True'''

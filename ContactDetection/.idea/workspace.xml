@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30205acc-a3d6-4768-a2fd-a9f17fb78226" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/planocartesiano.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testeo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detectionvertex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testeopunto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3d_figure_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/3d_figure_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datatestgenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/datatestgenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detection-3d.py" beforeDir="false" afterPath="$PROJECT_DIR$/detection3d.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebas/1.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/1.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detection3d.py" beforeDir="false" afterPath="$PROJECT_DIR$/detectionedge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/10.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/10.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pruebas/2.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/2.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pruebas/3.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/3.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diapos reuniones/hito1/hito1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../diapos reuniones/hito1/hito1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diapos reuniones/hito1/hito1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../diapos reuniones/hito1/hito1.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diapos reuniones/hito1/img/wea-dem.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../memoria/Referencia.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/4.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/4.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/5.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/5.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/6.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/6.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/7.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/7.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/8.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/8.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/9.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/9.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testeo.py" beforeDir="false" afterPath="$PROJECT_DIR$/testeoarista.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +151,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testeo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testeoarista.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -215,35 +217,44 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2587" y="173" width="642" height="768" key="#test/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576030858501" />
-    <state x="738" y="287" width="424" height="520" key="FileChooserDialogImpl" timestamp="1576030295437">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="779" y="287" width="424" height="520" key="FileChooserDialogImpl" timestamp="1578408731745">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="738" y="287" width="424" height="520" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1576030295437" />
-    <state width="767" height="893" key="GridCell.Tab.0.bottom" timestamp="1576552337845">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="779" y="287" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1578408731745" />
+    <state width="767" height="893" key="GridCell.Tab.0.bottom" timestamp="1577136823710">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="767" height="893" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576552337845" />
-    <state width="767" height="893" key="GridCell.Tab.0.center" timestamp="1576552337845">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="767" height="893" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1577136823710" />
+    <state width="767" height="893" key="GridCell.Tab.0.center" timestamp="1577136823709">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="767" height="893" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576552337845" />
-    <state width="767" height="893" key="GridCell.Tab.0.left" timestamp="1576552337845">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="767" height="893" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1577136823709" />
+    <state width="767" height="893" key="GridCell.Tab.0.left" timestamp="1577136823709">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="767" height="893" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576552337845" />
-    <state width="767" height="893" key="GridCell.Tab.0.right" timestamp="1576552337845">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="767" height="893" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1577136823709" />
+    <state width="767" height="893" key="GridCell.Tab.0.right" timestamp="1577136823710">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="767" height="893" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576552337845" />
+    <state width="767" height="893" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1577136823710" />
     <state x="2402" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1576038359668">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2402" y="188" width="1022" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576038359668" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1576866379813">
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1578402556567">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="603" y="380" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1576720403047" />
     <state x="2523" y="362" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576547966805" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1576866379813" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578402556567" />
+    <state x="656" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1578405688046">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="656" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1578405688046" />
   </component>
 </project>
