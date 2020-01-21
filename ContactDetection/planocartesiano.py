@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
-def configplano():
+def setplane():
     ax = plt.axes(projection='3d')
     ax.set_xlim3d(0, 30)
     ax.set_ylim3d(0, 30)
@@ -11,7 +11,7 @@ def configplano():
     ax.set_zlabel('Z axis')
     return ax
 
-def createfigureplot(ax, U0, a, b, c):
+def plotpoliedron(ax, U0, a, b, c):
     ax.plot3D((U0[0], U0[0] + a),
               (U0[1], U0[1]),
               (U0[2], U0[2]),
@@ -74,8 +74,7 @@ def createfigureplot(ax, U0, a, b, c):
               color='c')
 
 
-# ----------------------------------- plotear arista y punto a estudiar--------------------------
-def plottestpoint(ax, inside, point):
+def plotvertex(ax, inside, point):
     if (inside):
         ax.plot3D((point[0], point[0]),
                   (point[1], point[1]),
@@ -90,7 +89,7 @@ def plottestpoint(ax, inside, point):
                   color='r')
 
 
-def plottestarista(ax, Si, Sf, inside, Vj, Vk):
+def plotedge(ax, Si, Sf, inside, Vj, Vk):
     if (inside):
         ax.plot3D((Vj[0], Vk[0]),
                   (Vj[1], Vk[1]),

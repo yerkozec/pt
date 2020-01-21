@@ -28,8 +28,7 @@ def testdetection(N):
 
     print("tiempo de deteccion de punto:", elapsed_time_point,
           "\nnumero de puntos detectados dentro: ", countpointin,
-          "\nnumero de puntos detectados fuera: ", countpointout,
-          "\nvectores", vertextest)
+          "\nnumero de puntos detectados fuera: ", countpointout)
     return vertexinside, vertextest
 
 
@@ -45,17 +44,17 @@ if __name__ == '__main__':
         b = size[1]
         c = size[2]
         pointinside, point = testdetection(ntest)
-        ax = planocartesiano.configplano()
-        planocartesiano.createfigureplot(ax, U0, a, b, c)
-        for i in range(0, ntest):
-            planocartesiano.plottestpoint(ax, pointinside[i], point[i])
+        ax = planocartesiano.setplane()
+        planocartesiano.plotpoliedron(ax, U0, a, b, c)
+        '''for i in range(0, ntest):
+            planocartesiano.plotvertex(ax, pointinside[i], point[i])'''
         plt.show()
     else:
         print(userandom)
         U0, a, b, c, point, Vj, Vk = datagenerator.gendata(userandom)
         pointinside = detectionvertex.pointdetection(U0, a, b, c, point)
-        ax = planocartesiano.configplano()
-        planocartesiano.createfigureplot(ax, U0, a, b, c)
-        planocartesiano.plottestpoint(ax, pointinside, point)
+        ax = planocartesiano.setplane()
+        planocartesiano.plotpoliedron(ax, U0, a, b, c)
+        planocartesiano.plotvertex(ax, pointinside, point)
         plt.show()
 

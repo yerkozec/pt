@@ -3,20 +3,15 @@ import random
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
-
-# -----------------generador de figura geometricas 2d------------
-
 def genfig():
     vectorx = random.sample(range(30), 2)
     vectory = random.sample(range(30), 2)
     vectorz = random.sample(range(30), 2)
-
     return (vectorx, vectory, vectorz)
 
 
 def genpunto():
     punto = random.sample(range(30), 3)
-
     return punto
 
 
@@ -24,7 +19,6 @@ def genarista():
     vectorx = random.sample(range(30), 2)
     vectory = random.sample(range(30), 2)
     vectorz = random.sample(range(30), 2)
-
     return vectorx, vectory, vectorz
 
 
@@ -32,15 +26,12 @@ def getvertex(figura):
     vertex0 = np.array([figura[0][0],
                         figura[1][0],
                         figura[2][0]])
-
     vertex1 = np.array([figura[0][1],
                         figura[1][0],
                         figura[2][0]])
-
     vertex2 = np.array([figura[0][0],
                         figura[1][1],
                         figura[2][0]])
-
     vertex3 = np.array([figura[0][0],
                         figura[1][0],
                         figura[2][1]])
@@ -53,19 +44,15 @@ def getB(figura):
     U1 = np.array(vertex[1])
     U2 = np.array(vertex[2])
     U3 = np.array(vertex[3])
-    # ----------------------------------------
     b1 = U1 - U0
     b2 = U2 - U0
     b3 = U3 - U0
-
     normb1 = np.linalg.norm(b1, ord=2)
     normb2 = np.linalg.norm(b2, ord=2)
     normb3 = np.linalg.norm(b3, ord=2)
-
     b1v = (b1 / normb1)
     b2v = (b2 / normb2)
     b3v = (b3 / normb3)
-
     B = np.array([[b1v[0], b1v[1], b1v[2]],
                   [b2v[0], b2v[1], b2v[2]],
                   [b3v[0], b3v[1], b3v[2]]])
@@ -78,24 +65,16 @@ def pointdetection(figura, punto):
     U1 = np.array(vertex[1])
     U2 = np.array(vertex[2])
     U3 = np.array(vertex[3])
-
-    # ----------------------------------------
     a = U1 - U0
     c = U2 - U0
     b = U3 - U0
-
     B = getB(figura)
-
     V0 = punto[0] - U0[0]
     V1 = punto[1] - U0[1]
     V2 = punto[2] - U0[2]
-
     V = np.array([[V0], [V1], [V2]])
-
     alpha = np.linalg.solve(B, V)
-
     resultx, resulty, resultz = False, False, False
-
     if (0 <= alpha[0] <= max(a)):
         resultx = True
     if (0 <= alpha[1] <= max(c)):
@@ -125,7 +104,6 @@ def getS(Vj, Vk, a, b, c):
 
 def aristaisinside(ro1, ro2, a, b, c):
     s = [[0, 0], [0, 0], [0, 0]]
-    # -----------------Vj--------------
     if (0 <= ro1[0] <= a):
         s[0][0] = ro1[0]
     else:
@@ -138,7 +116,6 @@ def aristaisinside(ro1, ro2, a, b, c):
         s[2][0] = ro1[2]
     else:
         s[2][0] = []
-        # ------------Vk-------------
     if (0 <= ro2[0] <= a):
         s[0][1] = ro2[0]
     else:
@@ -155,13 +132,11 @@ def aristaisinside(ro1, ro2, a, b, c):
 
 
 def aristadetection(figura, arista):
-    # ----------------------- get vectores de las figuras---------------------------------
     vertex = np.array(getvertex(figura))
     U0 = np.array(vertex[0])
     U1 = np.array(vertex[1])
     U2 = np.array(vertex[2])
     U3 = np.array(vertex[3])
-    # -----------------------get vectores de las aristas---------------------------------
     Vj = np.array([arista[0][0], arista[1][0], arista[2][0]])
     Vk = np.array([arista[0][1], arista[1][1], arista[2][1]])
     Vjprima = Vj - U0
@@ -249,7 +224,6 @@ ax.set_xlabel('X axis')
 ax.set_ylabel('Y axis')
 ax.set_zlabel('Z axis')
 
-# ----------------------------Dibujo 3d--------------------------
 ax.plot3D((xline[0], xline[1], xline[1], xline[0], xline[0]),
           (yline[0], yline[0], yline[1], yline[1], yline[0]),
           zline[0],
@@ -275,7 +249,6 @@ ax.plot3D((xline[0], xline[0]),
           (zline[0], zline[1]),
           color='r')
 
-# ----------------------------- Dibuja un punto decolor verde si esta dentro y si esta fuera de rojo -----------------------
 if(inside):
     ax.plot3D((punto[0], punto[0]),
               (punto[1], punto[1]),
@@ -288,18 +261,13 @@ else:
               (punto[2], punto[2]),
               'o',
               color='r')
-# -----------------------------------Dibuja la arista-------------------
+
 if (aristadentro):
     ax.plot3D((xarista[0], xarista[1]),
               (yarista[0], yarista[1]),
               (zarista[0], zarista[1]),
               'o-',
               color='y')
-    '''ax.plot3D((segdentro[0]),
-              (segdentro[1]),
-              (segdentro[2]),
-              'o-',
-              color='c')'''
 else:
     ax.plot3D((xarista[0], xarista[1]),
               (yarista[0], yarista[1]),
@@ -311,13 +279,6 @@ else:
               (Si[2], Sf[2]),
               'o-',
               color='c')
-'''    
-ax.plot3D((xarista[0], sprima[0]),
-(yarista[0], sprima[1]),
-(zarista[0], sprima[2]),
-'o-',
-color = 'y')
-'''
 plt.grid()
 plt.show()
 
