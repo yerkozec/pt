@@ -4,7 +4,7 @@ import random
 def gendata(datarandom):
     if datarandom == "True":
         U0 = 5, 4, 6
-        size = 15, 20, 10
+        size = 10, 15, 16
         point = list(random.sample(range(30), 3))
         Vj = list(random.sample(range(30), 3))
         Vk = list(random.sample(range(30), 3))

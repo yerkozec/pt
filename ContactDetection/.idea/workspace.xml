@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30205acc-a3d6-4768-a2fd-a9f17fb78226" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/facedetection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graficodetiempovsn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3d_figure_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/3d_figure_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detectionedge.py" beforeDir="false" afterPath="$PROJECT_DIR$/detectionedge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planocartesiano.py" beforeDir="false" afterPath="$PROJECT_DIR$/planocartesiano.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebas/1.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/1.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebas/10.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/10.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebas/4.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/4.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebas/6.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/6.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruebas/9.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/9.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testeoarista.py" beforeDir="false" afterPath="$PROJECT_DIR$/testeoarista.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testeopunto.py" beforeDir="false" afterPath="$PROJECT_DIR$/testeopunto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facedetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/facedetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/2.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/2.in" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +203,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2587" y="173" width="642" height="768" key="#test/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576030858501" />
+    <state x="2520" y="150" width="777" height="814" key="CommitChangelistDialog2" timestamp="1579741961697">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2520" y="150" width="777" height="814" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1579741961697" />
     <state x="779" y="287" width="424" height="520" key="FileChooserDialogImpl" timestamp="1578408731745">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -241,19 +236,24 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2402" y="188" width="1022" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576038359668" />
-    <state x="603" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1579573818829">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="2508" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1579741803777">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2508" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1579741803777" />
+    <state x="2523" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1579718725764">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="603" y="380" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1579573818829" />
-    <state x="2523" y="362" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576547966805" />
+    <state x="2523" y="362" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1579718725764" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1579449959756" />
     <state x="738" y="197" width="501" height="720" key="refactoring.ChangeSignatureDialog" timestamp="1579450145231">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="738" y="197" width="501" height="720" key="refactoring.ChangeSignatureDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1579450145231" />
-    <state x="656" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1578427971002">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="2530" y="238" width="697" height="696" key="search.everywhere.popup" timestamp="1579741682024">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="2530" y="238" width="697" height="696" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1579741682024" />
     <state x="656" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1578427971002" />
   </component>
 </project>
