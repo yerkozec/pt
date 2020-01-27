@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30205acc-a3d6-4768-a2fd-a9f17fb78226" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/diccionariocaras.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facedetectioedge.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facedetectionvertex.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datagenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facedetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/facedetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detectionedge.py" beforeDir="false" afterPath="$PROJECT_DIR$/detectionedge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detectionvertex.py" beforeDir="false" afterPath="$PROJECT_DIR$/detectionvertex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facedetection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/planocartesiano.py" beforeDir="false" afterPath="$PROJECT_DIR$/planocartesiano.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/1.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/1.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pruebas/2.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/2.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/3.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/3.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/4.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/4.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/5.in" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/5.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testeoarista.py" beforeDir="false" afterPath="$PROJECT_DIR$/testeoarista.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testeopunto.py" beforeDir="false" afterPath="$PROJECT_DIR$/testeopunto.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +52,7 @@
       <recent name="$PROJECT_DIR$/../.." />
     </key>
   </component>
-  <component name="RunManager" selected="Python.detectionedge">
+  <component name="RunManager" selected="Python.facedetectionvertex">
     <configuration name="3d_figure_detection" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ContactDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,27 +74,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Generador_figuras" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ContactDetection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generador_figuras.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="detectionedge" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ContactDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,6 +87,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/detectionedge.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="facedetectionvertex" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ContactDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/facedetectionvertex.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.facedetectionvertex" />
         <item itemvalue="Python.detectionedge" />
         <item itemvalue="Python.testeo" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.3d_figure_detection" />
-        <item itemvalue="Python.Generador_figuras" />
       </list>
     </recent_temporary>
   </component>
@@ -199,6 +211,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="634" y="159" width="642" height="768" key="#detection-3d/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1576199819601" />
+    <state x="667" y="173" width="642" height="768" key="#facedetection" timestamp="1579796723127">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="667" y="173" width="642" height="768" key="#facedetection/67.27.1853.1053@67.27.1853.1053" timestamp="1579796723127" />
     <state x="2587" y="173" width="642" height="768" key="#test" timestamp="1576030858501">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -212,48 +228,60 @@
     </state>
     <state x="738" y="287" width="424" height="520" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1576030295437" />
     <state x="779" y="287" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1578408731745" />
-    <state width="767" height="893" key="GridCell.Tab.0.bottom" timestamp="1579117295012">
+    <state width="767" height="893" key="GridCell.Tab.0.bottom" timestamp="1579786237650">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="767" height="893" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576552337845" />
-    <state width="767" height="893" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1579117295012" />
-    <state width="767" height="893" key="GridCell.Tab.0.center" timestamp="1579117295011">
+    <state width="767" height="893" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1579786237650" />
+    <state width="767" height="893" key="GridCell.Tab.0.center" timestamp="1579786237649">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="767" height="893" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576552337845" />
-    <state width="767" height="893" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1579117295011" />
-    <state width="767" height="893" key="GridCell.Tab.0.left" timestamp="1579117295010">
+    <state width="767" height="893" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1579786237649" />
+    <state width="767" height="893" key="GridCell.Tab.0.left" timestamp="1579786237648">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="767" height="893" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576552337845" />
-    <state width="767" height="893" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1579117295010" />
-    <state width="767" height="893" key="GridCell.Tab.0.right" timestamp="1579117295012">
+    <state width="767" height="893" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1579786237648" />
+    <state width="767" height="893" key="GridCell.Tab.0.right" timestamp="1579786237649">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="767" height="893" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576552337845" />
-    <state width="767" height="893" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1579117295012" />
+    <state width="767" height="893" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1579786237649" />
     <state x="2402" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1576038359668">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2402" y="188" width="1022" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1576038359668" />
+    <state x="2757" y="471" width="303" height="171" key="VCS.ChangelistChooser" timestamp="1580062642957">
+      <screen x="0" y="27" width="3840" height="1053" />
+    </state>
+    <state x="2757" y="471" width="303" height="171" key="VCS.ChangelistChooser/0.27.3840.1053@0.27.3840.1053" timestamp="1580062642957" />
+    <state x="2746" y="425" width="324" height="264" key="VCS.EditChangelistDialog" timestamp="1580062631151">
+      <screen x="0" y="27" width="3840" height="1053" />
+    </state>
+    <state x="2746" y="425" width="324" height="264" key="VCS.EditChangelistDialog/0.27.3840.1053@0.27.3840.1053" timestamp="1580062631151" />
     <state x="2508" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1579741803777">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2508" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1579741803777" />
-    <state x="2523" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1579718725764">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="2087" y="127" width="1653" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580062762421">
+      <screen x="0" y="27" width="3840" height="1053" />
+    </state>
+    <state x="2087" y="127" width="1653" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.3840.1053@0.27.3840.1053" timestamp="1580062762421" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1579786159423">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="603" y="380" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1579573818829" />
     <state x="2523" y="362" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1579718725764" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1579449959756" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1579786159423" />
     <state x="738" y="197" width="501" height="720" key="refactoring.ChangeSignatureDialog" timestamp="1579450145231">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="738" y="197" width="501" height="720" key="refactoring.ChangeSignatureDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1579450145231" />
-    <state x="2530" y="238" width="697" height="696" key="search.everywhere.popup" timestamp="1579741682024">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="656" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1579887481807">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="2530" y="238" width="697" height="696" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1579741682024" />
-    <state x="656" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1578427971002" />
+    <state x="656" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1579887481807" />
   </component>
 </project>

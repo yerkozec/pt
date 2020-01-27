@@ -25,3 +25,4 @@ def pointdetection(U0, a, b, c, point):
     if (0 <= alpha[2] <= c):
         resultz = True
     return resultx and resulty and resultz
+

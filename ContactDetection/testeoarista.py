@@ -5,6 +5,7 @@ import random
 import matplotlib.pyplot as plt
 import time
 import numpy as np
+import facedetectioedge as facedge
 
 
 def testdetection(N):
@@ -17,6 +18,9 @@ def testdetection(N):
     for i in range(0, N):
         Vj = list(random.sample(range(30), 3))
         Vk = list(random.sample(range(30), 3))
+        while Vj == Vk:
+            Vj = list(random.sample(range(30), 3))
+            Vk = list(random.sample(range(30), 3))
         Si, Sf, aristainside = detectionedge.edge_detection(U0, a, b, c, Vj, Vk)
         edgetest[i, :3] = Vj[0], Vj[1], Vj[2]
         edgetest[i, 3:] = Vk[0], Vk[1], Vk[2]
@@ -45,8 +49,6 @@ if __name__ == '__main__':
         ntest = input()
         ntest = int(ntest)
         U0, size, point, Vj, Vk = datagenerator.gendata(userandom)
-        if Vj == Vk:
-            U0, size, point, Vj, Vk = datagenerator.gendata(userandom)
         a = size[0]
         b = size[1]
         c = size[2]
@@ -62,9 +64,11 @@ if __name__ == '__main__':
         plt.show()
     else:
         print(userandom)
-        U0, a, b, c, point, Vj, Vk = datagenerator.gendata(userandom)
+        U0, a, b, c, point, Vj, Vk, posv = datagenerator.gendata(userandom)
         Si, Sf, aristainside = detectionedge.edge_detection(U0, a, b, c, Vj, Vk)
+        if aristainside:
+            nearpoint = facedge.whichfaceedge(U0, a, b, c, Si, Sf)
         ax = planocartesiano.setplane()
         planocartesiano.plotpoliedron(ax, U0, a, b, c)
-        planocartesiano.plotedge(ax, Si, Sf, aristainside, Vj, Vk)
+        planocartesiano.plotedge(ax, Si, Sf, aristainside, Vj, Vk, nearpoint)
         plt.show()

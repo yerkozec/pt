@@ -8,7 +8,7 @@ def edge_detection(U0, a, b, c, Vj, Vk):
     Vk = np.asarray(Vk)
     Vjprima = Vj - U0
     Vkprima = Vk - U0
-    size = [a, b, c]
+    size = [a + U0[0], b + U0[1], c + U0[2]]
     Ro = np.array([[0, a],
                    [0, b],
                    [0, c]])
