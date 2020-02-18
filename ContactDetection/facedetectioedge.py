@@ -85,18 +85,18 @@ def dicpoliedron(U0, a, b, c):
          'U6': U0 + b + a + c,
          'U7': U0 + b + c}
     edges = {
-        '(e0)': [U0, U0 + a],
-        '(e1)': [U0 + a, U0 + a + c],
-        '(e2)': [U0 + a + c, U0 + c],
-        '(e3)': [U0 + c, U0],
-        '(e4)': [U0, U0 + b],
-        '(e5)': [U0 + a, U0 + b + a],
-        '(e6)': [U0 + a + c, U0 + a + b + c],
-        '(e7)': [U0 + a + c, U0 + b + c],
-        '(e8)': [U0 + b + c, U0 + b],
-        '(e9)': [U0 + b, U0 + b + a],
-        '(e10)': [U0 + b + a, U0 + b + a + c],
-        '(e11)': [U0 + a + b + c, U0 + b + c]
+        '(e0)': [U['U0'], U['U1']],
+        '(e1)': [U['U1'], U['U2']],
+        '(e2)': [U['U2'], U['U3']],
+        '(e3)': [U['U3'], U['U0']],
+        '(e4)': [U['U0'], U['U4']],
+        '(e5)': [U['U1'], U['U5']],
+        '(e6)': [U['U2'], U['U6']],
+        '(e7)': [U['U3'], U['U7']],
+        '(e8)': [U['U7'], U['U4']],
+        '(e9)': [U['U4'], U['U5']],
+        '(e10)': [U['U5'], U['U6']],
+        '(e11)': [U['U6'], U['U7']]
     }
 
     faces = {'f0': ([0, -1, 0], -b / 2),
@@ -106,6 +106,7 @@ def dicpoliedron(U0, a, b, c):
              'f4': ([0, 0, -1], -c / 2),
              'f5': ([0, 1, 0], -b / 2),
              }
+
 
     return edges, faces
 
@@ -122,14 +123,18 @@ def calcular_vector_normal(vectorcara1, vectorcara2, dicfaces):
     return vectornormalresultante
 
 def productocruzentrearistas(Si, Sf, ua, ub, vectorresultante):
-    '''print("U's:", ub, ua, "\nS's:", Si, Sf)'''
+    '''print("U's:", ub, ua, "\nS's:", Si, Sf)
+    ei = ua + t1*(ub - ua) = ua + t1*vi
+    ef = si + t2*(sf - si) = si + t2*vj
+    '''
+    print(Si,Sf)
     vi = ub - ua
     vj = Sf - Si
-    '''print("V's:", vi, vj)'''
+    print("V's:", vi, vj)
     n = np.cross(vj, vi)
-    '''print("n:", n)'''
+    print("n:", n)
     n = n / norm(n)
-    '''print("n normalizado:", n)'''
+    print("n normalizado:", n)
     productopunto = np.dot(n, vectorresultante)
     '''print("producto punto entre n y vectornormalresultante:", productopunto)'''
     if productopunto < 0:
@@ -147,8 +152,8 @@ def productocruzentrearistas(Si, Sf, ua, ub, vectorresultante):
 
 
 def nearestpoint(ua, Si, nuno, vj):
-    nearestpoint = (Si + (((np.dot(ua - Si, nuno)) / np.dot(vj, nuno)) * vj))
-    '''print(nearestpoint)'''
+    nearestpoint = Si + (np.dot(ua - Si, nuno) / np.dot(vj, nuno)) * vj
+    print(nearestpoint)
     return nearestpoint
 
 
